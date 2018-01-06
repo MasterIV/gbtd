@@ -16,6 +16,13 @@
 * draw towers onto the background to not hit the sprite per row limit
 * criters should only be 24 tiles wide to avoid 10 sprites per row limit
 
+## Sprites
+
+* 0-3 Cursor
+
+* 10-29 Enemies
+* 30-39 Bullets
+
 # Towers
 
 * Basic Tower: Cheap but does not do much damage
@@ -54,3 +61,72 @@
 ## Fourth
 
 * Upgrade towers?
+* animations?
+
+# Code
+
+## Basic Features
+
+* Tower placement
+* Cursor 
+    * Movement
+    * Selection
+* Enemy spaning
+* Enemy behavious
+    * Moving
+    * Attacking
+* Tower Fire
+
+## File strucure
+
+* towers.c
+* enemies.c
+* waves.c
+* menu.c
+* gbtd.c
+* cursor.c
+* sprites.c
+* bg-sprites.c
+* bg-data.map
+
+
+## interface definitions
+
+´´´
+
+struct TowerDefinition {
+    int hp
+    int dmg
+    int cooldown
+    ??? sprites
+    ??? projectile
+}
+
+struct EnemyDefinition {
+    int hp
+    int speed
+    int dmg
+    ??? sprites
+}
+
+
+
+struct Tower {
+    int type
+    int lane
+    int row
+    int hp
+    int cooldown
+}
+
+struct Enemy {
+    int type
+    int x
+    int y
+    int hp
+}
+
+place_tower(int row, int lane, int type)
+
+
+´´´
